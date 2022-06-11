@@ -1,24 +1,46 @@
-# README
+# Info threader blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+a example ruby on rails blog for sharing info between colleagues
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby
+- Rails
 
-* System dependencies
 
-* Configuration
+## Getting Started
 
-* Database creation
+To get a local copy up and running follow these simple example steps.
 
-* Database initialization
+```
+git clone https://github.com/JuanLPalacios/Info-threader-blog.git
+```
+Then
+```
+cd Info-threader-blog
+rails s
+```
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Authors
 
-* Deployment instructions
+👤 **Juan Luis Palacios**
 
-* ...
+- GitHub: [@JuanLPalacios](https://github.com/JuanLPalacios)
+- Twitter: [@JuanLuisPalac20](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/juan-luis-palacios-p%C3%A9rez-95b39a228/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
+
