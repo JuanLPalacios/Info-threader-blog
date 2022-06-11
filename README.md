@@ -6,6 +6,7 @@ a example ruby on rails blog for sharing info between colleagues
 
 - Ruby
 - Rails
+- RSpec
 
 
 ## Getting Started
