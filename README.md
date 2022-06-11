@@ -6,6 +6,7 @@ a example ruby on rails blog for sharing info between colleagues
 
 - Ruby
 - Rails
+- RSpec
 
 
 ## Getting Started
@@ -18,11 +19,29 @@ git clone https://github.com/JuanLPalacios/Info-threader-blog.git
 Then
 ```
 cd Info-threader-blog
+bundle install
+```
+Make sure that the defaut user for sistem exist in postgres to avoid error `Fatal: Role '[user_name]' does not exist` 
+```
+sudo su - posgres
+createuser -s -r [user_name]
+logout
+```
+finally
+```
 rails s
 ```
 
+## Unit Tests
 
-## Authors
+To run al tests run
+
+```
+rspec --force-color --format documentation
+```
+
+
+## Author
 
 👤 **Juan Luis Palacios**
 
