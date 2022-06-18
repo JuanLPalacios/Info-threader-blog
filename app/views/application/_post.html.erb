@@ -1,0 +1,12 @@
+<a href="<%= show_post_path(post.author_id, post) %>"  class="contextual">
+    <article class="post-card box">
+    <h2>
+        <%= post.title %>
+    </h2>
+    <p><%= post.text.truncate(200) %></p>
+    <span class="foot-note">
+        Comments: <%= post.comments_counter %>,
+        Likes: <%= post.likes_counter %>
+    </span>
+    </article>
+</a>
