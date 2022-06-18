@@ -3,8 +3,8 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
 
-  def self.update_user_posts_counter(user)
-    user.update(post_counter: Post.where(author_id: user.id).length)
+  def update_user_posts_counter
+    author.increment!(:posts_counter)
   end
 
   def most_recent_comments
