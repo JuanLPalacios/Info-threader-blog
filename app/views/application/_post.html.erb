@@ -1,12 +1,11 @@
-<a href="<%= show_post_path(post.author_id, post) %>"  class="contextual-link">
-    <article class="post-card box">
-    <h2>
-        <%= post.title %>
-    </h2>
-    <p><%= post.text.truncate(200) %></p>
+<article class="post-card box">
+    <a href="<%= show_post_path(post.author_id, post) %>"  class="contextual-link">
+        <h2>
+            <%= post.title %>
+        </h2>
+        <p><%= post.text.truncate(200) %></p>
+    </a>
     <span class="foot-note">
-        Comments: <%= post.comments_counter %>,
-        Likes: <%= post.likes_counter %>
+        <%= render partial: "like_button", locals: { post: post } %>
     </span>
-    </article>
-</a>
+</article>
