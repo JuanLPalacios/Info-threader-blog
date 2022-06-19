@@ -1,39 +1,81 @@
-* {
-    color: black;
+section.action-butons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
-section.action-butons {display: flex;justify-content: center;gap: 15px;}
+a.btn {
+  display: inline-block;
+  background: cornflowerblue;
+  font-weight: bold;
+  text-decoration: inherit;
+  padding: 2px 5px;
+}
 
-a.btn {display: inline-block;background: cornflowerblue;font-weight: bold;text-decoration: inherit;padding: 2px 5px;}
+a.btn:hover {
+  background: lavender;
+}
 
-a.btn:hover {background: lavender;}
+header.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-header.post-header {display: flex;align-items: center;justify-content: space-between;}
+.comment-card .user {
+  font-weight: bold;
+}
 
-.comment-card .user {font-weight: bold;}
-
-.comment-card {display: flex;gap: 8px;}
+.comment-card {
+  display: flex;
+  gap: 8px;
+}
 
 span.foot-note {
-display: block;text-align: right;}
+  display: block;
+  text-align: right;
+}
 
-.box {background: aliceblue;margin-block: 5px;padding: 5px;}
+.box {
+  background: aliceblue;
+  margin-block: 5px;
+  padding: 5px;
+}
 
-section.comment-list.box {margin-block-end: 24px;}
+section.comment-list.box { margin-block-end: 24px; }
 
-article.user-card {display: flex;padding: 10px;gap: 10px;}
+article.user-card {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+}
 
-article.user-card > div {display: flex;flex-direction: column;justify-content: center;flex: 1 1 auto;background: aliceblue;padding: 10px;}
+article.user-card > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 auto;
+  background: aliceblue;
+  padding: 10px;
+}
 
-article.user-card > div > span {text-align: right;}
+article.user-card > div > span {
+  text-align: right;
+}
 
-article.user-card .user-image {object-fit: cover;transform-origin: center;width: 100px;height: 100px;}
+article.user-card .user-image {
+  object-fit: cover;
+  transform-origin: center;
+  width: 100px;
+  height: 100px;
+}
 
 a.contextual-link {
+  color: inherit;
+  text-decoration: inherit;
+}
 
-    color: inherit;
-text-decoration: inherit;}
 a.contextual-link:hover {
-
-    color: inherit;
-filter: contrast(0.8) brightness(1.2);}
+  color: inherit;
+  filter: contrast(0.8) brightness(1.2);
+}
