@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'users(.:format)',to: 'users#index'
   get 'users/:id(.:format)',to: 'users#show', as: :show_user
   post 'posts/:id/likes(.:format)',to: 'posts#like', as: :like
+  post 'posts/:id/comments(.:format)',to: 'posts#comment', as: :comment
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

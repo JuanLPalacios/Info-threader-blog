@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params['id'].to_i)
+    @comment = Comment.new()
   end
 
   def create
@@ -15,7 +16,10 @@ class PostsController < ApplicationController
   end
 
   def comment
-    render "show"
+    @post = Post.find(params['id'].to_i)
+    comment = Comment.create(author: ApplicationRecord.current_user, post_id: params['id'].to_i, text: params['text'])
+    comment.update_post_comments_counter
+    redirect_to show_post_path(@post.author, @post)
   end
 
   def like
