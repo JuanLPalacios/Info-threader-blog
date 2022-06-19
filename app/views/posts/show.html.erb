@@ -1,2 +1,16 @@
-<h1>Posts#show</h1>
-<p>Here is the contents of a given post</p>
+<article class="post-card box">
+    <header class="post-header">
+        <h1><%= @post.title %> by <%= @post.author.name %></h1>
+        <span class="foot-note">
+            Comments: <%= @post.comments_counter %>,
+            Likes: <%= @post.likes_counter %>
+        </span>
+    </header>
+    <div><%= simple_format(@post.text) %></div>
+</article>
+
+<section class="comment-list box">
+    <% @post.comments.each do |comment| %>
+        <%= render partial: "comment", locals: { comment: comment } %>
+    <% end %>
+</section>

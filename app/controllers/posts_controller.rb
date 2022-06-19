@@ -6,5 +6,7 @@ class PostsController < ApplicationController
     @page = params['page'].to_i
   end
 
-  def show; end
+  def show
+    @post = Post.find(params['id'].to_i)
+  end
 end

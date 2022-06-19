@@ -1,6 +1,7 @@
-<a href="<%= show_user_path(user) %>">
+<a href="<%= show_user_path(user) %>" class="contextual-link">
+
     <article class="user-card">
-        <%= image_tag(user.photo, class: "user_image") %>
+        <%= image_tag(user.photo, class: "user-image") %>
         <div>
             <h1>
                 <%= user.name %>
