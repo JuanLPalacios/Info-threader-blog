@@ -8,11 +8,11 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params['id'].to_i)
-    @comment = Comment.new()
+    @comment = Comment.new
   end
 
   def new
-    @post = Post.new()
+    @post = Post.new
   end
 
   def create
@@ -34,5 +34,4 @@ class PostsController < ApplicationController
     like.update_likes_counter
     redirect_to show_post_path(@post.author, @post)
   end
-
 end

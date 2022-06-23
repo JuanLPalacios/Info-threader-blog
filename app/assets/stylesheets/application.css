@@ -2,25 +2,39 @@
   justify-content: center;
 }
 
-input.like-btn {border: none;background: #ff2b2b;font-weight: bold;color: #fff;padding: 3px 5px;}
+input.like-btn {
+  border: none;
+  background: #ff2b2b;
+  font-weight: bold;
+  color: #fff;
+  padding: 3px 5px;
+}
 
-.post-form {display: flex;flex-direction: column;gap: 10px;}
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 section.action-butons {
   display: flex;
   justify-content: center;
   gap: 15px;
-margin-block: 5px;}
+  margin-block: 5px;
+}
 
-a.btn {
-  color: #fff;display: inline-block;
+button,
+.btn {
+  color: #fff;
+  display: inline-block;
   background: cornflowerblue;
   font-weight: bold;
   text-decoration: inherit;
   padding: 2px 5px;
 }
 
-a.btn:hover {
+button:hover,
+.btn:hover {
   background: lavender;
 }
 
@@ -32,16 +46,24 @@ header.post-header {
 
 .comment-card .user {
   font-weight: bold;
-width: 100px;}
+  width: 100px;
+}
 
 .comment-card {
   display: flex;
   gap: 8px;
 }
 
-.comment-card > .comment {flex: 1 1 auto;}
+.comment-card > .comment {
+  flex: 1 1 auto;
+}
 
-.comment-card .comment {display: flex;flex-direction: column;align-content: stretch;align-self: stretch;}
+.comment-card .comment {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-self: stretch;
+}
 
 span.foot-note {
   display: block;
