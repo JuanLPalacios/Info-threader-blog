@@ -13,17 +13,12 @@
         <%= render partial: "comment", locals: { comment: comment } %>
     <% end %>
     <%= form_with url: comment_path(@post) do |form| %>
-        <% @comment.errors.full_messages.each do |message|%>
-            <div class='error'>
-                <%=message%>
-            </div>
-        <% end %>
         <div class="comment-card">
             <div class="user">Comment:</div>
             <div class="comment">
                 <%= form.text_area :text, placeholder:'Write here...' %>
             </div>
         </div>
-        <%= form.submit  %>
+        <%= form.submit 'Submit' %>
     <% end %>
 </section>

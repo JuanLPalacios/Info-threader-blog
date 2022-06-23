@@ -11,8 +11,14 @@ class PostsController < ApplicationController
     @comment = Comment.new()
   end
 
+  def new
+    @post = Post.new()
+  end
+
   def create
-    render "show"
+    params['author'] = ApplicationRecord.current_user
+    @post = Post.create(author: ApplicationRecord.current_user, title: params['title'], text: params['text'])
+    redirect_to show_post_path(@post.author, @post)
   end
 
   def comment

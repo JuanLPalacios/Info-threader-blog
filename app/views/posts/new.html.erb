@@ -1,0 +1,5 @@
+<%= form_with url: posts_create_path, class: 'post-form' do |form| %>
+    <%= form.text_field :title, placeholder:'title' %>
+    <%= form.text_area :text, placeholder:'Contents' %>
+    <%= form.submit 'Post' %>
+<% end %>

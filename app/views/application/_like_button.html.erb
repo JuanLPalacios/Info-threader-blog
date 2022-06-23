@@ -1,4 +1,4 @@
 <%= form_with url: like_path(post), remote: false, local: true do |form| %>
     Comments: <%= post.comments_counter %>,
-    <%= form.submit "Likes: #{post.likes_counter}" %>
+    <%= form.submit "Likes: #{post.likes_counter}", class: 'like-btn' %>
 <% end %>
