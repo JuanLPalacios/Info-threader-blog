@@ -2,8 +2,7 @@
     <header class="post-header">
         <h1><%= @post.title %> by <%= @post.author.name %></h1>
         <span class="foot-note">
-            Comments: <%= @post.comments_counter %>,
-            Likes: <%= @post.likes_counter %>
+            <%= render partial: "like_button", locals: { post: @post } %>
         </span>
     </header>
     <div><%= simple_format(@post.text) %></div>
@@ -12,5 +11,14 @@
 <section class="comment-list box">
     <% @post.comments.each do |comment| %>
         <%= render partial: "comment", locals: { comment: comment } %>
+    <% end %>
+    <%= form_with url: comment_path(@post) do |form| %>
+        <div class="comment-card">
+            <div class="user">Comment:</div>
+            <div class="comment">
+                <%= form.text_area :text, placeholder:'Write here...' %>
+            </div>
+        </div>
+        <%= form.submit 'Submit' %>
     <% end %>
 </section>

@@ -3,6 +3,9 @@
     <h2>Bio</h2>
     <p><%= @user.bio %></p>
 </div>
+<section class="action-butons">
+    <%= link_to "+ New Post", posts_new_path, class:'btn' %>
+</section>
 <section>
     <% @user.most_recent_posts.each do |post| %>
         <%= render partial: "post", locals: { post: post } %>
