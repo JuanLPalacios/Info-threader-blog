@@ -2,8 +2,9 @@ class PostsController < ApplicationController
   def index
     params['page'] = 1 if params['page'].nil? || ((params['page'].to_i < 1))
     @user = User.find(params['user_id'].to_i)
-    @posts = Post.includes(:comments,
-                           comments: [:author]).where(author_id: params['user_id'].to_i).limit(2).offset((params['page'].to_i - 1) * 2)
+    @posts = Post
+      .includes(:comments, comments: [:author])
+      .where(author_id: params['user_id'].to_i).limit(2).offset((params['page'].to_i - 1) * 2)
     @page = params['page'].to_i
   end
 
