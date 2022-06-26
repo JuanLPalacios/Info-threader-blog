@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   context 'When creating a new user:' do
-    subject { Post.new(author: User.first, title: "Hello", text: "This is my post") }
+    subject { Post.new(author: User.first, title: 'Hello', text: 'This is my post') }
 
     before { subject.save }
 
@@ -23,9 +23,8 @@ RSpec.describe Post, type: :model do
   end
 
   context 'update_user_posts_counter method for a given post:' do
-
     it 'Should update the author posts_counter' do
-      post = Post.create(author: User.first, title: "Hello", text: "This is my post")
+      post = Post.create(author: User.first, title: 'Hello', text: 'This is my post')
       post.update_user_posts_counter
 
       expect(User.first.posts_counter).to eq(User.first.posts.length)
@@ -39,7 +38,7 @@ RSpec.describe Post, type: :model do
       result = subject.most_recent_comments
 
       expect(result.length).to eq(5)
-      expect(result).to include(subject.comments.last) 
+      expect(result).to include(subject.comments.last)
     end
   end
 end

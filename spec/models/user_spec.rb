@@ -24,7 +24,7 @@ RSpec.describe User, type: :model do
       result = subject.most_recent_posts
 
       expect(result.length).to eq(3)
-      expect(result).to include(subject.posts.last) 
+      expect(result).to include(subject.posts.last)
     end
   end
 end
