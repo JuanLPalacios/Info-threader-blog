@@ -2,7 +2,9 @@ class PostsController < ApplicationController
   def index
     params['page'] = 1 if params['page'].nil? || ((params['page'].to_i < 1))
     @user = User.find(params['user_id'].to_i)
-    @posts = @user.posts.limit(2).offset((params['page'].to_i - 1) * 2)
+    @posts = Post
+      .includes(:comments, comments: [:author])
+      .where(author_id: params['user_id'].to_i).limit(2).offset((params['page'].to_i - 1) * 2)
     @page = params['page'].to_i
   end
 
@@ -18,7 +20,8 @@ class PostsController < ApplicationController
   def create
     params['author'] = ApplicationRecord.current_user
     @post = Post.create(author: ApplicationRecord.current_user, title: params['title'], text: params['text'])
-    redirect_to show_post_path(@post.author, @post)
+    redirect_to show_post_path(@post.author, @post) if @post.valid?
+    render 'new'
   end
 
   def comment
