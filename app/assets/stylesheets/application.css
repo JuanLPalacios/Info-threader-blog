@@ -2,6 +2,16 @@
   justify-content: center;
 }
 
+ul.errors {
+  padding: 0;
+}
+
+ul.errors li {
+  display: block;
+  padding: 5px 10px;
+  background: #fad7d7;
+}
+
 input.like-btn {
   border: none;
   background: #ff2b2b;

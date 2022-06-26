@@ -6,8 +6,13 @@ RSpec.describe Post, type: :model do
 
     before { subject.save }
 
-    it 'Should verify name must not be blank.' do
+    it 'Should verify title must not be blank.' do
       subject.title = ''
+      expect(subject).to_not be_valid
+    end
+
+    it 'Should verify title must not exceed 250 characters' do
+      subject.title = 'a' * 251
       expect(subject).to_not be_valid
     end
 

@@ -19,7 +19,8 @@ class PostsController < ApplicationController
   def create
     params['author'] = ApplicationRecord.current_user
     @post = Post.create(author: ApplicationRecord.current_user, title: params['title'], text: params['text'])
-    redirect_to show_post_path(@post.author, @post)
+    redirect_to show_post_path(@post.author, @post) if @post.valid?
+    render 'new'
   end
 
   def comment
