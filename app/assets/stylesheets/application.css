@@ -2,6 +2,14 @@
   justify-content: center;
 }
 
+.field,
+.actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.actions { margin-block-start: 24px; }
+
 ul.errors {
   padding: 0;
 }
@@ -20,7 +28,8 @@ input.like-btn {
   padding: 3px 5px;
 }
 
-.post-form {
+.post-form,
+form#new_user {
   display: flex;
   flex-direction: column;
   gap: 10px;
