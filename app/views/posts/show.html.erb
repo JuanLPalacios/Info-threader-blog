@@ -2,6 +2,11 @@
     <header class="post-header">
         <h1><%= @post.title %> by <%= @post.author.name %></h1>
         <span class="foot-note">
+            <% if can? :delete, @post %>
+                <%= form_with url: delete_post_path(@post), method: :delete do |form| %>
+                    <%= form.submit "Delete", data: { confirm: "Are you sure You want to delete this post?" } %>
+                <% end %>
+            <% end %>
             <%= render partial: "like_button", locals: { post: @post } %>
         </span>
     </header>

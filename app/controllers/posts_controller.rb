@@ -18,22 +18,23 @@ class PostsController < ApplicationController
   end
 
   def create
-    params['author'] = ApplicationRecord.current_user
-    @post = Post.create(author: ApplicationRecord.current_user, title: params['title'], text: params['text'])
-    redirect_to show_post_path(@post.author, @post) if @post.valid?
+    params['author'] = current_user
+    @post = Post.create(author: current_user, title: params['title'], text: params['text'])
+    return redirect_to show_post_path(@post.author, @post) if @post.valid?
+
     render 'new'
   end
 
-  def comment
-    @post = Post.find(params['id'].to_i)
-    comment = Comment.create(author: ApplicationRecord.current_user, post_id: params['id'].to_i, text: params['text'])
-    comment.update_post_comments_counter
-    redirect_to show_post_path(@post.author, @post)
+  def delete
+    post = Post.find(params['id'].to_i)
+    author = post.author
+    post.delete
+    redirect_to posts_path(author)
   end
 
   def like
     @post = Post.find(params['id'].to_i)
-    like = Like.create(author: ApplicationRecord.current_user, post_id: params['id'].to_i)
+    like = Like.create(author: current_user, post_id: params['id'].to_i)
     like.update_likes_counter
     redirect_to show_post_path(@post.author, @post)
   end

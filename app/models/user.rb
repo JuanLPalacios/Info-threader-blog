@@ -9,7 +9,13 @@ class User < ApplicationRecord
   validates :name, presence: { allow_blank: false, message: 'must not be blank.' }
   validates :posts_counter, comparison: { greater_than_or_equal_to: 0 }
 
+  ROLES = %i[admin default].freeze
+
   def most_recent_posts
     posts.order(created_at: :desc).limit(3)
+  end
+
+  def is?(requested_role)
+    role == requested_role.to_s
   end
 end
