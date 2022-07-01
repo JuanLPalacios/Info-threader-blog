@@ -6,6 +6,11 @@
         <p><%= post.text.truncate(200) %></p>
     </a>
     <span class="foot-note">
+        <% if can? :delete, post %>
+            <%= form_with url: delete_post_path(post), method: :delete do |form| %>
+                <%= form.submit "Delete", data: { confirm: "Are you sure You want to delete this post?" } %>
+            <% end %>
+        <% end %>
         <%= render partial: "like_button", locals: { post: post } %>
     </span>
 </article>
