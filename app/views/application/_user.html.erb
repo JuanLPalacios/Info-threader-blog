@@ -1,7 +1,7 @@
 <a href="<%= show_user_path(user) %>" class="contextual-link">
 
     <article class="user-card">
-        <%= image_tag(user.photo, class: "user-image") %>
+        <%= image_tag((user.photo.blank? ? 'https://via.placeholder.com/200x200.png?text=No+Photo' : user.photo), class: "user-image") %>
         <div>
             <h1>
                 <%= user.name %>
