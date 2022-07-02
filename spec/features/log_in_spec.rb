@@ -28,7 +28,11 @@ RSpec.describe 'Login page', type: :feature do
 
   it 'When I click the submit button after filling in the username and ' \
      'the password with correct data, I am redirected to the root page.' do
-    fill_in('user_email', with: 'test0@test.com')
+    user = User.new(name: 'User #0', photo: 'https://picsum.photos/id/1004/576/384', bio: 'User 0 from test batch", email:'test0@alt_test.com', password: 'password', password_confirmation: 'password')
+    user.skip_confirmation!
+    user.save!
+    
+    fill_in('user_email', with: 'test0@alt_test.com')
     fill_in('user_password', with: 'password')
     click_button 'Log in'
 
