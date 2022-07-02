@@ -8,12 +8,12 @@ RSpec.describe 'User index page', type: :feature do
     click_button 'Log in'
     visit('/users')
   end
-  let (:users) { User.all }
+  let(:users) { User.all }
 
   it 'I can see the username of all other users.' do
     users.each { |user| expect(page).to have_content(user.name) }
   end
-  
+
   it 'I can see the profile picture for each user.' do
     users.each { |user| expect(page).to have_xpath("//img[@src = '#{user.photo}']") }
   end
