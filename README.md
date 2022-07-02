@@ -20,6 +20,10 @@ Then
 ```
 cd Info-threader-blog
 bundle install
+rails db:create
+rails db:schema:load
+rails db:seed RAILS_ENV=development
+rails db:seed RAILS_ENV=test
 ```
 Make sure that the defaut user for sistem exist in postgres to avoid error `Fatal: Role '[user_name]' does not exist` 
 ```
