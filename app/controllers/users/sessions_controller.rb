@@ -4,11 +4,7 @@ class Users::SessionsController < Devise::SessionsController
 
   private
 
-  def respond_with(resource, _opts = {})
-    render json: {token: request.env['warden-jwt_auth.token']}, status: :ok
-  end
-
-  def respond_to_on_destroy
-    head :ok
+  def respond_with(_resource, _opts = {})
+    render json: { token: request.env['warden-jwt_auth.token'] }, status: :ok
   end
 end
