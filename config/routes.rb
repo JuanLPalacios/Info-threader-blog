@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
+Rails.application.routes.draw do
+    devise_for :users,
+               controllers: {
+                   sessions: 'api/sessions'
+               }, as: :api_users
+    # ...
+  end
   root 'users#index'
   get 'users/:user_id/posts(.:format)',to: 'posts#index', as: :posts
   get 'users/:user_id/posts/:id(.:format)',to: 'posts#show', as: :show_post
